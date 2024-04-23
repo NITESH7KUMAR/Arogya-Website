@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <!-- <link rel="stylesheet" href="login.css"> -->
+    <style>
+        body{
+            background-image: url('/assets/Homeimg.png');
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+         #signs{
+            display: flex;
+            justify-content: right;
+
+        }
+
+.bg-modal {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+    left: 0;
+	display: none;
+	justify-content: right;
+	align-items: center;
+}
+
+.modal-contents {
+	height: 630px;
+	width: 330px;
+	background-color: white;
+	/* text-align: center; */
+	padding: 0px;
+	position: relative;
+	border-radius: 4px;
+}
+.modal-contents>form>h2{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    margin-left: 25px;
+    color: #4F585E;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+	margin: 15px auto;
+	display: block;
+	width: 80%;
+    height: 20px;
+	padding: 8px;
+	border: 1px solid gray;
+    border-radius: 5px;
+}
+.close{
+    background-color: #10847e;
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 0;
+	left: -40px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-top: 20px;
+    /* margin-right: 10px; */
+}
+
+.close>div {
+	/* position: absolute; */
+	/* top: 0;
+	left: -30px; */
+	font-size: 30px;
+	color:white;
+	transform: rotate(45deg);
+	cursor: pointer;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+.button{
+    width:85%;
+    background-color: #10847e;
+    color: white;
+    margin-left: 8%;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 25px;
+    height:30px;
+
+}
+.button:hover{
+    cursor: pointer;
+}
+input+p{
+    font-size: 11px;
+    margin-left: 8%;
+    margin-top: 5%;
+    color: #4F585E;
+}
+.in-up-modal{
+    background-color: #10847e;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.in-up-modal>div:first-child{
+    width:42%;
+    
+}
+.in-up-modal>div:first-child>img{
+    width: 100%;
+    margin-top: 25px;
+}
+.in-up-modal>div:last-child{
+    
+    margin-top: 10px;
+    width:40%
+}
+.in-up-modal>div:last-child>img{
+    width:80%;
+    margin-top: 8px;
+}
+#display{
+    font-family:'Open Sans', sans-serif;
+    font-size: 10px;
+    color: red;
+    margin-left: 25px;
+}
+#newdis{
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 15px;
+}
+#newdis>div>h2{
+    font-size: 16px;
+    /* margin-left: 8%;
+    margin-top: 5%; */
+    color: #4F585E;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+#newdis>div>div{
+    display: flex;
+    justify-content: space-evenly;
+}
+#newdis>div>div>input{
+    width:30px;
+    height: 20px;
+    border: 1px solid #10847e ;
+}
+
+#newdis>div>div+div{
+    display: flex;
+    justify-content: space-between;
+}
+#newdis>div>div+div>p{
+    color:#10847e;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+#newdis>div>div+div>p:hover{
+    cursor: pointer;
+}
+
+#newdis>div>button{
+    width:95%;
+    background-color: #10847e;
+    color: white;
+    margin-left: 3%;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 35px;
+    height:30px;
+}
+#newdis>div>button:hover{
+    cursor: pointer;
+}
+#newdis>div>p{
+    font-size: 11px;
+    /* margin-left: 8%;
+    margin-top: 5%; */
+    color: #4F585E;
+}
+.button1{
+    width:95%;
+    background-color: #10847e;
+    color: white;
+    margin-left: 3%;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 35px;
+    height:30px;   
+}
+#asdfg{
+    width:80%;
+    background-color: #10847e;
+    color: white;
+    margin-left: 10%;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 35px;
+    height:30px;
+}
+</style>
+ </head>
+<body>
+    <div class="bg-modal">
+        <div class="modal-contents">
+            <div class="in-up-modal">
+                <div>
+                    <img src="logo1.png"/>
+                </div>
+                <div></div>
+            </div>
+            <div class="close">
+                <div>+</div>
+            </div>
+            <form id="form" action="">
+                <h2>Quick Log-in/Register</h2>
+                <input type="text" placeholder="Phone Number" id="phonenum">
+                <input type="submit" id="asdfg" value="continue">
+                <p>By clicking continue, you agree to our Privacy Policy</p>
+                <p id="display"> </p>
+            </form>
+            <form id="newdis"></form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Display the modal initially
+    document.querySelector('.bg-modal').style.display = "flex";
+
+    // Close modal when the close button is clicked
+    document.querySelector('.close').addEventListener("click", function() {
+        window.location.href = "index.html";
+        document.querySelector('.bg-modal').style.display = "none";
+    }); 
+
+    // Add event listener to the form for phone number submission
+    document.querySelector('#form').addEventListener("submit", inputs);
+
+    // Function to handle phone number submission
+    function inputs(event) {
+        event.preventDefault();
+        let phone = document.querySelector('#phonenum').value;   
+        let modi = Math.floor(phone);
+       
+        if (typeof(modi) === 'number' && phone.length === 10) {
+            // Proceed with OTP verification
+            newdiss(event);
+        } else {
+            document.querySelector('#display').innerText = "Invalid phone number";
+        }
+    }
+
+    // Function to display OTP form and hide phone number input form
+    function newdiss(event) {
+        // Hide the phone number input form
+        document.querySelector('#form').style.display = "none";
+
+        // Display the OTP form
+        var card = document.createElement("div");
+
+        var heading = document.createElement("h2");
+        heading.innerText = "Enter otp to continue";
+
+        var innercard = document.createElement("div");
+        var inputotp1 = document.createElement("input");
+        inputotp1.type = "text";
+        var inputotp2 = document.createElement("input");
+        inputotp2.type = "text";
+        var inputotp3 = document.createElement("input");
+        inputotp3.type = "text";
+        var inputotp4 = document.createElement("input");
+        inputotp4.type = "text";
+
+        innercard.append(inputotp1, inputotp2, inputotp3, inputotp4);
+
+        var innercardtext = document.createElement("div");
+        var leftw = document.createElement("p");
+        leftw.innerText = "Change Number";
+        leftw.addEventListener("click", numc); // Add event listener to change number
+
+        var rightw = document.createElement("p");
+        rightw.innerText = "Resend Otp";
+        rightw.addEventListener("click", resendOtp); // Add event listener to resend OTP
+
+        innercardtext.append(leftw, rightw);
+
+        var inputsubmit = document.createElement("input");
+        inputsubmit.type = "submit";
+        inputsubmit.value = "Continue";
+        inputsubmit.setAttribute("id", "continuebtn");
+        inputsubmit.setAttribute("class", "button1");
+        
+        var underbuttontext = document.createElement("p");
+        underbuttontext.innerText = "By clicking continue, you agree to our Privacy Policy";
+
+        card.append(heading, innercard, innercardtext, inputsubmit, underbuttontext);
+        document.querySelector("#newdis").append(card);
+
+        document.querySelector('#continuebtn').addEventListener("click", savelogin);
+        function savelogin(event){
+            event.preventDefault();
+            localStorage.setItem("checkLogin", "Yes");
+            window.location.href = "index.html";
+        }
+    }
+
+    function numc(event) {
+    event.preventDefault(); // Prevent default form submission action
+
+    // Reset the form and display phone number input
+    document.querySelector('#newdis').innerHTML = `
+        <form id="form" action="">
+            <h2>Quick Log-in/Register</h2>
+            <input type="text" placeholder="Phone Number" id="phonenum">
+            <input type="submit" id="asdfg" value="continue">
+            <p>By clicking continue, you agree to our Privacy Policy</p>
+            <p id="display"> </p>
+        </form>`;
+
+    // Display the modal again
+    document.querySelector('.bg-modal').style.display = "flex"; 
+
+    // Add event listener to the form for phone number submission
+    document.querySelector('#form').addEventListener("submit", inputs);
+}
+
+
+
+    // Function to handle OTP resend
+    function resendOtp() {
+        let num = document.getElementById("phonenum").value;
+        if (num.length !== 10) {
+            alert("Enter a valid Mobile Number");
+            return;
+        }
+        var a = ran();
+        var b = ran();
+        var c = ran();
+        var d = ran();
+        alert(`Your OTP is ${a} ${b} ${c} ${d}`);
+    }
+
+    // Function to generate random number for OTP
+    function ran() {
+        return Math.floor(Math.random() * 10);
+    }
+
+    // Function to handle OTP verification and continue
+    function logged(a, b, c, d) {
+    let o1 = document.getElementById("otp1").value;
+    let o2 = document.getElementById("otp2").value;
+    let o3 = document.getElementById("otp3").value;
+    let o4 = document.getElementById("otp4").value;
+
+    if (o1 && o2 && o3 && o4) { // Check if all OTP input fields are filled
+        if (o1 == a && o2 == b && o3 == c && o4 == d) {
+            let ruser = document.getElementById("useruser");
+            ruser.style.display = "block";
+            let logruser = document.getElementById("makemeuser");
+            logruser.style.display = "none";
+
+            let arr = JSON.parse(localStorage.getItem("pharmuser")) || [];
+            let session = [];
+            let us = arr[arr.length - 1];
+            session.push(us);
+            localStorage.setItem("session", JSON.stringify(session));
+        } else {
+            alert("Invalid OTP. Please try again.");
+        }
+    } else {
+        alert("Please fill in all OTP fields.");
+    }
+}
+
+
+    // Check if there's an active session and display the username
+    let session = JSON.parse(localStorage.getItem("session")) || [];
+    let ruser = document.getElementById("useruser");
+    ruser.style.display = "none";
+    if (session.length > 0) {
+        ruser.style.display = "block";
+        let logruser = document.getElementById("makemeuser");
+        logruser.style.display = "none";
+    }
+
+    if (session[0] && session[0].user) {
+        ruser.innerText = session[0].user;
+    }
+});
+
+    </script>
+</body>
+</html>
